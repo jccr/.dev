@@ -91,10 +91,21 @@ main.panel {
   justify-content: center;
 }
 
-body::after {
+.panel:after {
   content: "";
-  background: url(../images/noise-dot.gif), url(../images/noise-static.gif), rgba(0, 0, 0, 0.2);
-  opacity: 0.05;
+  background: rgba(127, 127, 127, 0.1);
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+main.panel:after {
+  content: "";
+  background: url(../images/noise-dot.gif);
+  opacity: 0.02;
   top: 0;
   left: 0;
   bottom: 0;
@@ -103,4 +114,19 @@ body::after {
   z-index: -1;
   background-size: 200px 200px;
   image-rendering: pixelated;
+}
+
+body:after {
+  content: "";
+  background: url(../images/noise-static.gif), url(../images/noise-dot.gif);
+  opacity: 0.04;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  background-size: 200px 200px;
+  image-rendering: pixelated;
+  background-blend-mode: exclusion;
 }

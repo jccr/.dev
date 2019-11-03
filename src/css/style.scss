@@ -91,23 +91,16 @@ main.panel {
   justify-content: center;
 }
 
-.panel::after,
 body::after {
   content: "";
   background: url(../images/noise-dot.gif), url(../images/noise-static.gif), rgba(0, 0, 0, 0.2);
-  opacity: 0.04;
+  opacity: 0.05;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
   position: absolute;
   z-index: -1;
-  background-size: 100px 100px;
-  image-rendering: pixelated;
-}
-
-body::after {
-  opacity: 0.06;
   background-size: 200px 200px;
-  background-blend-mode: multiply;
+  image-rendering: pixelated;
 }

@@ -36,7 +36,7 @@ a:active {
     outline: 2px solid #ffaa00;
   }
   &:active {
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.2);
   }
 }
 
@@ -80,10 +80,10 @@ main.panel {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   background-blend-mode: exclusion;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(27, 27, 27, 0.4);
   padding: 2vh;
   border-radius: 1px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(177, 177, 177, 0.2);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), 0 1px 7px rgba(0, 0, 0, 0.2);
   text-align: center;
   display: flex;
@@ -91,29 +91,20 @@ main.panel {
   justify-content: center;
 }
 
-.panel:after {
-  content: "";
-  background: rgba(127, 127, 127, 0.1);
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1;
-}
-
-main.panel:after {
-  content: "";
-  background: url(../images/noise-dot.gif);
-  opacity: 0.02;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1;
-  background-size: 200px 200px;
-  image-rendering: pixelated;
+main.panel {
+  position: relative;
+  &:before {
+    content: "";
+    background: url(../images/noise-dot.gif);
+    opacity: 0.02;
+    display: block;
+    float: left;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-size: 200px 200px;
+    image-rendering: pixelated;
+  }
 }
 
 body:after {

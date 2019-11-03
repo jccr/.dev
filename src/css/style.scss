@@ -1,0 +1,114 @@
+@import "./reset.scss";
+
+@font-face {
+  font-family: "Cascadia Code";
+  src: url("../fonts/Cascadia.ttf");
+}
+
+html {
+  height: 100%;
+}
+body {
+  color: #fff;
+  font-family: monospace;
+  background-image: url(../images/tile.png);
+  background-size: cover;
+  box-sizing: border-box;
+  display: grid;
+  height: 100%;
+  grid-template-rows: 72fr 2fr 7fr;
+}
+a,
+a:visited,
+a:hover,
+a:active {
+  color: inherit;
+  text-decoration: inherit;
+
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  user-select: none;
+
+  &:hover {
+    background: rgba(127, 127, 127, 0.2);
+  }
+  &:focus {
+    outline: 2px solid #ffaa00;
+  }
+  &:active {
+    background: rgba(0, 0, 0, 0.7);
+  }
+}
+
+header,
+aside {
+  font-family: "Major Mono Display", monospace;
+  text-transform: uppercase;
+  align-self: center;
+  text-align: left;
+
+  font-size: 14vmin;
+  max-width: 7em;
+  margin-left: 7vw;
+  margin-right: 7vw;
+  opacity: 0.88;
+}
+
+aside {
+  position: absolute;
+  top: 20vh;
+  right: 0;
+  max-width: 70vmin;
+  font-size: 7vmin;
+  text-align: right;
+  opacity: 0.4;
+  text-transform: lowercase;
+}
+main.panel {
+  font-family: "Cascadia Code" monospace;
+  font-size: 1.27em;
+  border-left-width: 0;
+  border-right-width: 0;
+  flex-wrap: wrap;
+  .panel {
+    margin: 2vh;
+    min-width: 7em;
+    width: 14vw;
+  }
+}
+
+.panel {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-blend-mode: exclusion;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 2vh;
+  border-radius: 1px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), 0 1px 7px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.panel::after,
+body::after {
+  content: "";
+  background: url(../images/noise-dot.gif), url(../images/noise-static.gif), rgba(0, 0, 0, 0.2);
+  opacity: 0.04;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  background-size: 100px 100px;
+  image-rendering: pixelated;
+}
+
+body::after {
+  opacity: 0.06;
+  background-size: 200px 200px;
+  background-blend-mode: multiply;
+}

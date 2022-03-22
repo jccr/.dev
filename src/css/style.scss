@@ -42,16 +42,15 @@ a:active {
 
 header,
 aside {
+  mix-blend-mode: exclusion;
   font-family: "Major Mono Display", monospace;
   text-transform: uppercase;
   align-self: center;
   text-align: left;
-
   font-size: 14vmin;
   max-width: 7em;
   margin-left: 7vw;
   margin-right: 7vw;
-  opacity: 0.88;
 }
 
 aside {
@@ -59,11 +58,18 @@ aside {
   top: 20vh;
   right: 0;
   max-width: 70vmin;
-  font-size: 7vmin;
+  font-size: 8vmin;
   text-align: right;
-  opacity: 0.4;
+  opacity: 0.77;
   text-transform: lowercase;
 }
+
+@media (max-width: 640px) {
+  header {
+    font-size: 18vmin;
+  }
+}
+
 main.panel {
   font-family: "Cascadia Code" monospace;
   border-left-width: 0;
